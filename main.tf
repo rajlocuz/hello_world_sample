@@ -9,6 +9,8 @@ resource "aws_instance" "Demo-hello-world" {
     instance_type = "t2.micro"
     ami = "${lookup(var.amis, var.region)}"
     tags {
-      name = "Demo sample instance"
+      key = "Name"
+      value = "Demo Sample instance"
+      propagate_at_launch = true
     }
 }
